@@ -5,4 +5,5 @@
 
 
 ### References to videos
-- recording of brain-game: https://asciinema.org/a/VYfQN3ISPFRbMkRDKCIMtf8Qf
+- recording of brain-even: https://asciinema.org/a/VYfQN3ISPFRbMkRDKCIMtf8Qf
+- recording of brain-calc: https://asciinema.org/a/9pU1Xoyzoi54eLabGoTjDQNCp
