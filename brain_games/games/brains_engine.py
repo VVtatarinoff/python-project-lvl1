@@ -26,17 +26,19 @@ def ask_progr():
     Длина прогрессии, шаг, скрываемое число генерируются
     случайным образом
     возвращает два параметра - ответ игрока и правильный ответ"""
-    pr_len = randint(5, 10)    # длина прогрессии
+    pr_len = randint(6, 10)    # длина прогрессии
     pr_start = randint(1, 15)  # начальное число
     pr_step = randint(1, 10)   # шаг прогрессии
-    i_missing = randint(1, pr_len)  # номер числа для пропуска
+    i_missing = randint(2, pr_len - 1)  # номер числа для пропуска
     count = 0
     ans_string = ""
     while count < pr_len:
         if count + 1 == i_missing:
             ans_string += ".. "
         else:
-            ans_string += str(pr_start + pr_step * count) + " "
+            ans_string += str(pr_start + pr_step * count)
+            if count != (pr_len - 1):
+                ans_string += " "
         count += 1
     answer = prompt.integer(QUESTION_STR.format(ans_string))
     return answer, pr_start + pr_step * (i_missing - 1)
