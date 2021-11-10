@@ -22,10 +22,3 @@ def find_gcd(input1, input2):
         # остаток становится текущим меньшим числом
         max_value, min_value = min_value, max_value % min_value
     return min_value
-
-
-# ответ "yes" - если четное, иначе - "no"
-def answer_even(number):
-    if number % 2 == 0:
-        return "yes"
-    return "no"

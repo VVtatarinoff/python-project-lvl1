@@ -10,10 +10,7 @@ def welcome_user_new():
 
 
 def answer_final(name, flag):
-    if flag:
-        print('Congratulations,', name + '!')
-    else:
-        print("Let's try again,", name + '!')
+    print('Congratulations,' if flag else "Let's try again,", name + '!')
 
 
 def answer_for_input(is_correct, user_answer="", right_answer=""):
@@ -24,5 +21,5 @@ def answer_for_input(is_correct, user_answer="", right_answer=""):
         print(answer_string.format(user_answer, right_answer))
 
 
-def question_string(str_value):
-    print(str_value)
+# def question_string(str_value):
+#    print(str_value)

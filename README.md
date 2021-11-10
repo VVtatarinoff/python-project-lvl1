@@ -8,3 +8,4 @@
 - recording of brain-even: https://asciinema.org/a/VYfQN3ISPFRbMkRDKCIMtf8Qf
 - recording of brain-calc: https://asciinema.org/a/9pU1Xoyzoi54eLabGoTjDQNCp
 - recording of brain-gcd:  https://asciinema.org/a/Ase3ys60fxIuP0Eg0mjvwuZoy
+- recording of brain-progression https://asciinema.org/a/BNlzmLxnTkpWVVOnfxHYZTY9s
