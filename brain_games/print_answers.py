@@ -19,7 +19,3 @@ def answer_for_input(is_correct, user_answer="", right_answer=""):
     else:
         answer_string = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
         print(answer_string.format(user_answer, right_answer))
-
-
-# def question_string(str_value):
-#    print(str_value)

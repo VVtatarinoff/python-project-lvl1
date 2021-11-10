@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# скрипт игры калькулятор
+
 import brain_games.games.brains_calc_game
 
 

@@ -22,3 +22,19 @@ def find_gcd(input1, input2):
         # остаток становится текущим меньшим числом
         max_value, min_value = min_value, max_value % min_value
     return min_value
+
+
+def generate_prime_list(depth=100):
+    """генерируется список в диапозоне 0 - (depth-1),
+    тип bool. Проверка 'простоты' числа осуществляется с
+    помощью индекса, равного этому числу"""
+    # алгоритм строится на основе 'Решета Эратосфена'
+    prime_list = [True] * depth
+    prime_list[0] = prime_list[1] = False  # 0,1 - не простые
+    for count in range(2, depth):
+        if prime_list[count]:
+            # меняется на False все, что кратное текущему
+            # простому числу и двум
+            for n in range(2 * count, depth, count):
+                prime_list[n] = False
+    return prime_list

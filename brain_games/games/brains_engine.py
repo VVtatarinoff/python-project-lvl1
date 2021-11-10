@@ -1,11 +1,22 @@
+# модуль содержит в себе главную функцию is_winner - прогоняет циклы
+# и определяет победитель/проигравший
+# все остальные функции - это вопрос-ответ для каждой игры отдельно
+
 import prompt
 from random import randint
-# from brain_games.print_answers import welcome_user_new, answer_final
 from brain_games.print_answers import answer_for_input
-from brain_games.special_functions import find_gcd
+# find_gcd - поиск наибольшего делителя для двух чисел
+# generate_prime_list - заполнение глобальной переменной prime_array (ниже)
+from brain_games.special_functions import find_gcd, generate_prime_list
 
 # шаблон вопроса - для всех игр одинаковый
 QUESTION_STR = "Question: {0}\nYour answer: "
+
+# размер списка простых чисел: от 0 до PRIME_RANGE - 1
+PRIME_RANGE = 50
+
+# флаги 'простоты' числе по индексу
+prime_array = list()
 
 
 def ask_progr():
@@ -74,29 +85,37 @@ def ask_even():
     return answer, correct_answer
 
 
-# цикл с определением победителя
-# на входе game - строка с названием игры, возможные варианты
+def ask_prime():
+    """Игра 'Правильное ли число?'
+    функция генерирует случайное число от 0 до PRIME_RANGE - 1
+    для определения простоты числа используется список prime_array
+    возвращает два параметра - ответ игрока и правильный ответ"""
+    random_number = randint(0, PRIME_RANGE - 1)
+    answer = prompt.string(QUESTION_STR.format(str(random_number)))
+    return answer, "yes" if prime_array[random_number] else "no"
+
+
+# game - строка с названием игры, возможные варианты
 # 'calc'  - калькулятора
 # 'even'  - чет/нечет
 # 'gcd'   - наибольший общий делитель
 # 'progr' - арифметическая прогрессия
-# quest - первоначальный вопрос по заданию
-# count   - опционально, количество попыток. По умолчанию 3
-
-
+# 'prime' - простое ли число?
 def is_winner(game, quest, count=3):
     """ входные параметры - имя игры, первоночальный вопрос,
     количество циклов
     возвращаемое - выиграл или нет игрок (bool"""
-    # game - строка с названием игры, возможные варианты
-    # 'calc'  - калькулятора
-    # 'even'  - чет/нечет
-    # 'gcd'   - наибольший общий делитель
-    # 'progr' - арифметическая прогрессия
+
     print(quest)
+    # если игра 'простое число', то создаем сперва проверочную таблицу,
+    # чтобы не создавать ее каждый раз в цикле
+    if game == 'prime':
+        global prime_array
+        prime_array = generate_prime_list(PRIME_RANGE)
+
     # словарь со ссылками на функции проверки для различных игр
     funсtions = {'even': ask_even, 'progr': ask_progr,
-                 'calc': ask_calc, 'gcd': ask_gcd}
+                 'calc': ask_calc, 'gcd': ask_gcd, 'prime': ask_prime}
     while count > 0:
         user_answer, correct_answer = funсtions[game]()
         if user_answer == correct_answer:
