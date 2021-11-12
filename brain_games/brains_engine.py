@@ -28,13 +28,15 @@ GREETINGS_DICT = {CODE_EVEN: QST_EVEN,
 
 # шаблон вопроса - для всех игр одинаковый
 QUESTION_STR = "Question: {0}\nYour answer: "
-WRONG_ANSWER_STRING =  "'{0}' is wrong answer ;(. Correct answer was '{1}'."
+WRONG_ANSWER_STRING = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
 CORRECT_ANSWER = "Correct!"
+LOST_ANS = "Let's try again, "
+WIN_ANS = "Conratulations, "
 
 # размер списка простых чисел: от 0 до (PRIME_RANGE - 1)
 PRIME_RANGE = 50
 
-PROGR_LENGTH_START = 5 # минимальная длина прогрессии
+PROGR_LENGTH_START = 5  # минимальная длина прогрессии
 PROGR_LENGTH_END = 10  # максимальная длина прогрессии
 PROGR_START_MAX = 15   # максимальное число для начала прогрессии
 PROGR_STEP_MAX = 10    # максимальный шаг прогрессии
@@ -153,4 +155,4 @@ def exec_game(game_code, user_name):
         else:
             print(WRONG_ANSWER_STRING.format(user_answer, correct_answer))
             is_winner = False
-    print('Congratulations,' if is_winner else "Let's try again,", user_name + '!')
+    print(WIN_ANS if is_winner else LOST_ANS, user_name, "!")
