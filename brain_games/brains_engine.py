@@ -30,8 +30,8 @@ GREETINGS_DICT = {CODE_EVEN: QST_EVEN,
 QUESTION_STR = "Question: {0}\nYour answer: "
 WRONG_ANSWER_STRING = "'{0}' is wrong answer ;(. Correct answer was '{1}'."
 CORRECT_ANSWER = "Correct!"
-LOST_ANS = "Let's try again, "
-WIN_ANS = "Conratulations, "
+LOST_ANS = "Let's try again,"
+WIN_ANS = "Congratulations,"
 
 # размер списка простых чисел: от 0 до (PRIME_RANGE - 1)
 PRIME_RANGE = 50
@@ -155,4 +155,4 @@ def exec_game(game_code, user_name):
         else:
             print(WRONG_ANSWER_STRING.format(user_answer, correct_answer))
             is_winner = False
-    print(WIN_ANS if is_winner else LOST_ANS, user_name, "!")
+    print(WIN_ANS if is_winner else LOST_ANS, user_name + "!")
