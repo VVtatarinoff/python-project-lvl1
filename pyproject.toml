@@ -5,6 +5,7 @@ description = "brain-games"
 authors = ["Vladimir"]
 packages = [{include = "brain_games"},]
 classifiers = ["PROGRAMMING LANGUAGE :: PYTHON :: 3.8"]
+repository= "https://github.com/VVtatarinoff/python-project-lvl1"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
