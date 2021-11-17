@@ -19,6 +19,6 @@ def ask_prime():
     возвращает два параметра - ответ игрока и правильный ответ"""
 
     random_number = randint(0, PRIME_RANGE - 1)
-    prime_array = generate_prime_list(random_number + 1)
+    prime_array = generate_prime_list(PRIME_RANGE + 1)
     right_answer = "yes" if prime_array[random_number] else "no"
     return QST_PRIME, random_number, False, right_answer
