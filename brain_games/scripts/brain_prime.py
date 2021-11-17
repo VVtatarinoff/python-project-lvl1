@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # скрипт игры "простое ли число?"
-
-from brain_games.games.brains_prime_game import play_prime_game
+from brain_games.games.game import CODE_PRIME
+from brain_games.brains_engine import exec_game
 
 
 def main():
-    play_prime_game()
+    exec_game(CODE_PRIME)
 
 
 if __name__ == '__main__':

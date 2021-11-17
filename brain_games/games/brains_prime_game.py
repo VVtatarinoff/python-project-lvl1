@@ -1,12 +1,24 @@
-# Модуль содержит в себе запуск игры "простое ли число?"
-# welcome_user_new - приветствие игрока и запрос его имени
+from random import randint
+from brain_games.special_functions import generate_prime_list
+
+# максимальное число в игре
+PRIME_RANGE = 50
+QST_PRIME = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+
+# возвращает
+#   1 первоночальный вопрос
+#   2 под строка - задание
+#   3 является ли ввод числом (TRUE), иначе - строка
+#   4 правильный ответ
 
 
-from brain_games.print_answers import welcome_user_new
-from brain_games.brains_engine import CODE_PRIME, exec_game
+def ask_prime():
+    """Игра 'Правильное ли число?'
+    функция генерирует случайное число от 0 до PRIME_RANGE - 1
+    для определения простоты числа используется список prime_array
+    возвращает два параметра - ответ игрока и правильный ответ"""
 
-
-# запуск игры
-def play_prime_game():
-    user_name = welcome_user_new()
-    exec_game(CODE_PRIME, user_name)
+    random_number = randint(0, PRIME_RANGE - 1)
+    prime_array = generate_prime_list(random_number + 1)
+    right_answer = "yes" if prime_array[random_number] else "no"
+    return QST_PRIME, random_number, False, right_answer

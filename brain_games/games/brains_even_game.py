@@ -1,11 +1,18 @@
-# Модуль содержит в себе запуск игры "четное-нечетное"
-# welcome_user_new - приветствие игрока и запрос его имени
+from random import randint
 
-from brain_games.print_answers import welcome_user_new
-from brain_games.brains_engine import CODE_EVEN, exec_game
+EVEN_NUMBER_LIMIT = 100  # максимальное число для чет/нечет
+QST_EVEN = 'Answer "yes" if the number is even, otherwise answer "no".'
+
+# возвращает
+#   1 первоночальный вопрос
+#   2 под строка - задание
+#   3 является ли ввод числом (TRUE), иначе - строка
+#   4 правильный ответ
 
 
-# запуск игры
-def play_even_game():
-    user_name = welcome_user_new()
-    exec_game(CODE_EVEN, user_name)
+def ask_even():
+    """ Игра чет/нечет. Генерирует случайное число"""
+
+    random_number = randint(1, EVEN_NUMBER_LIMIT)
+    correct_answer = "yes" if random_number % 2 == 0 else "no"
+    return QST_EVEN, random_number, False, correct_answer
