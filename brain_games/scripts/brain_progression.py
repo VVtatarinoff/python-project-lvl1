@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 # скрипт игры арифметическая прогрессия
 
-from brain_games.games.game import CODE_PROGR
+import brain_games.games.brains_progr_game
 from brain_games.brains_engine import exec_game
 
 
 def main():
-    exec_game(CODE_PROGR)
+    exec_game(brain_games.games.brains_progr_game)
 
 
 if __name__ == '__main__':

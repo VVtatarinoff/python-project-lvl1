@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # скрипт игры нахождения наибольшего общего делителя
-from brain_games.games.game import CODE_GCD
+import brain_games.games.brains_gcd_game
 from brain_games.brains_engine import exec_game
 
 
 def main():
-    exec_game(CODE_GCD)
+    exec_game(brain_games.games.brains_gcd_game)
 
 
 if __name__ == '__main__':
