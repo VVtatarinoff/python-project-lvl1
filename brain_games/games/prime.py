@@ -2,20 +2,20 @@ from random import randint
 
 # максимальное число в игре
 PRIME_RANGE = 50
-QST_STR = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def is_prime(n):
-    if n < 2:
+def is_prime(number_to_check):
+    if number_to_check < 2:
         return False
-    elif n == 2:
+    elif number_to_check == 2:
         return True
-    i = 2
-    limit = int(n ** 0.5)
-    while i <= limit:
-        if n % i == 0:
+    counter = 2
+    limit = int(number_to_check ** 0.5)
+    while counter <= limit:
+        if number_to_check % counter == 0:
             return False
-        i += 1
+        counter += 1
     return True
 
 # возвращает
@@ -23,12 +23,12 @@ def is_prime(n):
 #   2 правильный ответ
 
 
-def main():
+def get_question_and_answer():
     """Игра 'Правильное ли число?'
     функция генерирует случайное число от 0 до PRIME_RANGE - 1
     для определения простоты числа используется список prime_array
     возвращает два параметра - ответ игрока и правильный ответ"""
 
-    random_number = randint(0, PRIME_RANGE - 1)
-    right_answer = "yes" if is_prime(random_number) else "no"
-    return random_number, right_answer
+    number_to_ask = randint(0, PRIME_RANGE - 1)
+    right_answer = "yes" if is_prime(number_to_ask) else "no"
+    return number_to_ask, right_answer

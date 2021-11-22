@@ -1,19 +1,19 @@
 from random import randint
 
 EVEN_NUMBER_LIMIT = 100  # максимальное число для чет/нечет
-QST_STR = 'Answer "yes" if the number is even, otherwise answer "no".'
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 # возвращает
 #   1 под строка - задание
 #   2 правильный ответ
 
 
-def is_even(n):
-    return n % 2 == 0
+def is_even(value):
+    return value % 2 == 0
 
 
-def main():
+def get_question_and_answer():
     """ Игра чет/нечет. Генерирует случайное число"""
-    random_number = randint(1, EVEN_NUMBER_LIMIT)
-    correct_answer = "yes" if is_even(random_number) else "no"
-    return random_number, correct_answer
+    number_to_ask = randint(1, EVEN_NUMBER_LIMIT)
+    correct_answer = "yes" if is_even(number_to_ask) else "no"
+    return number_to_ask, correct_answer
