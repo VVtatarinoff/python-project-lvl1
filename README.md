@@ -9,4 +9,4 @@
 - recording of brain-calc: https://asciinema.org/a/9pU1Xoyzoi54eLabGoTjDQNCp
 - recording of brain-gcd:  https://asciinema.org/a/Ase3ys60fxIuP0Eg0mjvwuZoy
 - recording of brain-progression https://asciinema.org/a/BNlzmLxnTkpWVVOnfxHYZTY9s
-- recording of brain-prime https://asciinema.org/a/w7ZrfeO798Wb3xb6P1wnzU3f5
+[![prime game](https://asciinema.org/a/w7ZrfeO798Wb3xb6P1wnzU3f5.svg)](https://asciinema.org/a/w7ZrfeO798Wb3xb6P1wnzU3f5)

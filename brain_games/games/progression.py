@@ -14,15 +14,9 @@ def get_question(members, member_to_hide):
     return ' '.join(result)
 
 
-def get_progression():
-    quantity_of_terms = randint(PROGR_LENGTH_MIN,
-                                PROGR_LENGTH_MAX)
-    start = randint(1, PROGR_START_MAX)
-    difference = randint(1, PROGR_DIF_MAX)
-    missing_member = randint(1, quantity_of_terms)
+def get_progression(quantity_of_terms, start, difference):
     stop = start + difference * (quantity_of_terms - 1)
-    result = list(x for x in range(start, stop + 1, difference))
-    return result, missing_member
+    return list(x for x in range(start, stop + 1, difference))
 
 # возвращает
 #   1 под строка - задание
@@ -35,7 +29,13 @@ def get_question_and_answer():
     правильный ответ
     Длина прогрессии, шаг, скрываемое число генерируются
     случайным образом"""
-    progression_list, member_to_hide = get_progression()
+    quantity_of_terms = randint(PROGR_LENGTH_MIN,
+                                PROGR_LENGTH_MAX)
+    start = randint(1, PROGR_START_MAX)
+    difference = randint(1, PROGR_DIF_MAX)
+    member_to_hide = randint(1, quantity_of_terms)
+    progression_list = get_progression(quantity_of_terms, start,
+                                       difference)
     question_to_user = get_question(progression_list, member_to_hide)
     correct_answer = str(progression_list[member_to_hide - 1])
     return question_to_user, correct_answer
