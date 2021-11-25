@@ -17,10 +17,12 @@ The package is created during educational courses at [Hexlet](https://ru.hexlet.
 
 ## Installation
 to install the package you could enter a command:
-python3 -m pip install --user git+https://github.com/VVtatarinoff/python-project-lvl1
+
+##### python3 -m pip install --user git+https://github.com/VVtatarinoff/python-project-lvl1
 
 to uninstall use the opposite command
-python3 -m pip uninstall hexlet-code
+
+##### python3 -m pip uninstall hexlet-code
 
 ## Usage
 To start any game it should be entered the corresponding command:
